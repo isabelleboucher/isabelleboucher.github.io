@@ -1,0 +1,123 @@
+body{
+    margin:0;
+    padding: 0;
+    overflow: overlay;
+}
+canvas {
+    position: fixed !important;
+    display: block;
+ }
+div {
+    text-align: justify;
+    text-justify: inter-word;
+}
+a{
+    text-decoration: none;
+    color:black;
+}
+.row {
+    display: flex;
+}
+.title{
+    font-size: 50px;
+    font-family: 'Inconsolata', monospace;
+    margin-left: 10px;
+}
+.subtitle{
+    font-size: 25px;
+    font-family: 'Inconsolata', monospace;
+    /*padding: 5px; */
+    font-style:italic;
+    text-align: center;
+}
+.subtitle1{
+  font-size: 18px;
+  font-family: 'Inconsolata', monospace;
+  /*padding: 5px; */
+  font-style:italic;
+}
+.subtitle3{
+  font-size: 18px;
+  font-family: 'Inconsolata', monospace;
+  /*padding: 5px; */
+  font-style:bold;
+  text-align: center;
+}
+.btn{
+    background-color: transparent;
+    color: rgb(0, 223, 0);
+    font-size: 50px;
+    /* padding: 24px; */
+    border: 2px;
+    border-color: black;
+    cursor: pointer;
+    /* border-radius: 5px; */
+    font-family: 'Inconsolata', monospace;
+}
+.btn:hover {
+    background-color: grey;
+    color: green; 
+  }
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+.column {
+    flex: 33.33%;
+    padding: 5px;
+}
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+.text {
+    color: black;
+    margin-left: 15em;
+    margin-right: 15em;
+    padding: 5px;
+    font-family: 'Inconsolata', monospace;
+}
+#surverse {
+  color: white;
+  margin-left: 15em;
+  margin-right: 15em;
+  padding: 5px;
+  font-size: 18px;
+  font-family: 'Inconsolata', monospace;
+  /* background: rgba(255, 255, 255, 0.2); */
+}
+
+#lang {
+    color: white;
+    margin-left: 15em;
+    margin-right: 15em;
+    padding: 5px;
+    font-size: 18px;
+    font-family: 'Inconsolata', monospace;
+  }
+
+::-webkit-scrollbar {
+width: 10px;
+height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+background: rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-track {
+background: rgba(255, 255, 255, 0.1);
+}
+@media screen and (max-width: 730px) {
+    .text {
+        margin-left: 2em;
+        margin-right: 2em;
+    }
+    .title {
+        text-align: center;
+    }
+  }
