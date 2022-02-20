@@ -24,7 +24,7 @@
             let font;
             let img = [];
             let bg;
-            let mapM;
+            //let mapM;
             let offset = 0;
             let easing = 0.03;
 
@@ -82,7 +82,7 @@
                 }   
 
                 hover(px, py) {
-                    if (px > this.x - this.d/4 && px < this.x + this.d/4 && py > this.y - 100/2 && py < this.y + 100/2){
+                    if (px > this.x - this.d/0.28 && px < this.x + this.d/0.28 && py > this.y - 100/2 && py < this.y + 100/2){
                         this.colorText = 0;
                         this.overBox = true;
 
