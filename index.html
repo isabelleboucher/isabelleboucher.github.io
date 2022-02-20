@@ -34,9 +34,9 @@
 
             function preload () {
                 font = loadFont('assets/Inconsolata/static/Inconsolata/Inconsolata-Medium.ttf');
-                let rand = Math.floor(Math.random() * 3) + 1;
+                let rand = Math.floor(Math.random() * 2) + 1;
                 bg = loadImage(`images/main/main${rand}.jpg`);
-                mapM = loadImage('images/carte1.png');
+                //mapM = loadImage('images/carte1.png');
 
                 // for (let i = 1; i < 5; i++) {
                 //     let temp = loadImage(`images/main/main${i}.jpg`);
@@ -63,9 +63,9 @@
 
             function setup() {  
                 createCanvas(windowWidth, windowHeight);
-                r.push(new Rectangle(width/2, height/2, 100, "surverse", 100));
-                r.push(new Rectangle(width * 0.8671875, height * 0.2863568215892054, 100, "phyto", 30));
-                r.push(new Rectangle(width * 0.47265625, height * 0.7961019490254873, 170, "NaCl", 30));
+                r.push(new Rectangle(width/2, height/2, 100, "ÉCO-MÉDIATIONS", 100));
+                //r.push(new Rectangle(width * 0.8671875, height * 0.2863568215892054, 100, "phyto", 30));
+                //r.push(new Rectangle(width * 0.47265625, height * 0.7961019490254873, 170, "NaCl", 30));
             }
 
             class Rectangle {
