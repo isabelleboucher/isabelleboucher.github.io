@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>ÉCO-MÉDIATIONS</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Mate&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.jsdelivr.net/npm/p5@1.3.1/lib/p5.js"></script>
+    </head>
+    <body>
+        <script>
+            let img;
+            let offset = 0;
+            let easing = 0.03;
+            var canvas;
+
+            function windowResized() {
+                resizeCanvas(window.innerWidth, window.innerWidth);
+            }
+
+            function preload() {
+                img = loadImage('images/shivers.jpg'); // Load an image into the program
+            }
+
+            function setup() {
+                canvas = createCanvas(window.innerWidth, window.innerWidth);
+                canvas.position(0, 0);
+                canvas.style('z-index', '-1');
+                canvas.parent("background");
+            }
+
+            function draw() {
+                // tint(255, 20);
+                // image(img, 0, 0); // Display at full opacity
+                let dy = mouseY - img.height / 2 - offset;
+                offset += dy * easing;
+                tint(255, 4); // Display at half opacity
+                image(img, 0, offset);
+                img.resize(window.innerWidth, window.innerWidth);
+            }
+
+            function toggleLanguage(language) {
+                let manifeste = document.getElementById("surverse");
+                if (language === "FR") {
+                    manifeste.innerHTML = '<p>Surverse plonge dans le devenir minéral, végétal, aqueux et gazeux de ces Territoires élémentaires et spirituels qui, dans le creux de zones extractives, recèlent de secrets et d’opacités. Nous sommes de l’hémisphère Nord, dans un pays appelé Canada, où s’entassent, fuient, s’écoulent et mutent, en proportion inégalée, plus de déchets ménagers et municipaux que partout ailleurs[1]. Ces molécules éclatées, puis recomposées, et si tôt oubliées, mènent des existences liminales, au cœur et par-delà l’ubiquité des dispositifs de canalisation et de contrôle de la matière. Inconnues et imprévisibles, elles s’échappent vers des univers parallèles et poreux.  Surverse propose d’en suivre les traces.</p>Les 170 ouvrages de surverse qui parsèment le réseau d’aqueduc de Montréal sont un exemple de dispositif de contrôle propre aux infrastructures municipales. Ces chambres souterraines ont pour objectif de rediriger volontairement les eaux usées vers le Fleuve et la Rivière qui embrassent l’Île et sont activées lorsque le volume hydraulique dépasse la capacité de rétention du système. Ceci peut être causé par de trop fortes précipitations de pluie ou de neige, ou encore lorsque des travaux majeurs d’entretien et de réfection requièrent l’allègement du débit dans le système d’aqueduc ainsi qu’à l’embouchure de la seule station d’épuration des eaux usées de la métropole. Une surverse est réussie lorsqu’elle prévient la défaillance d’une infrastructure sous pression.</p><p>La réorientation de ces eaux causée par l’activation d’un ouvrage de régulation engendre des conséquences environnementales dont la légalité ne fait que développer, à tort, un sentiment de sécuritéprévisibilité et d’inévitabilité que les seuils de pollution gouvernementaux s’empressent de corroborer[2]. Masquées derrière l’apparent contrôle de l’eau, qui a fait disparaître la majorité de ses cours sur le territoire de la métropole, ces surverses servent d’exutoires silencieux à la pression et l’échec que provoque les tentatives acharnées d’endiguement d’une matière qui ne peut être totalement contenue.</p><p>Plutôt que de critiquer la mauvaise gestion évidente des déchets au pays, ou encore de proposer des solutions technologiques toujours plus pointues pour la saine gestion de nos désirs assouvis, Surverse propose de reconsidérer les diverses formes de relations que nous entretenons avec ces éléments au parcours mystérieux et à la temporalité inhumaine. Par-delà la production excessive et la distribution inégale des contaminants dans l’environnement, des formes d’existences sont sans cesse effacées, ignorées et oubliées, sous l’égide des épistémologies scientifiques et des systèmes qui normalisent la pollution. Surverse veut d’abord faire le saut dans ces univers où tourbillonnent résidus, lixiviats et microplastiques, nous-même déborder en des lieux mouvants qui ne connaissent l’étroitesse et la rigidité des instruments de mesure et des principes universels. Nous nous laisserons guider par la magie de cette matière opaque et par l’étourdissement du jeu d’échelles qui auront tôt fait de décentrer nos perspectives humaines, trop humaines.</p><p>Surverse soupèse ses mots, à la fois si volatiles et si lourds, éclats de violences politiques dont nous héritons des privilègesdu privilège d’être ici. Si nous avons accès à cette Boréale, si nous foulons ce Bouclier dès lors que nous nous déplaçons, les privilèges qui nous permettent d’écrire et de pratiquer sont empreints du désir de reconfigurer les relations que nous avons avec ce lieu qui nous accueille. Nous avons grandi et appris au sein d’une épistémè qui, de la biologie à la géologie, a tranquillement et rationnellement départagé le sensible jusqu’à scinder tout à fait les domaines de la vie, de la mort, et du non-vivant. Par contraste, nous désirons retrouver notre chemin, parmi les méandres intimes d’une matière fait de molécules, de forces et d’affects, afin de les honorer et les appeler par leurs noms anciens.</p><br>[1] Hird, Myra J., 2013, “Waste, Landfills, and an Environmental Ethic of Vulnerability”, in Ethics and the Environment, Bloomington: Indiana University Press, vol. 18(1), p. 105.<br>[2] Liboiron, Max, 2021, Pollution is Colonialism, Durham: Duke University Press.</p>';
+                }
+                else {
+                    manifeste.innerHTML = "<p>Surverse dives into the mineral, vegetable, aqueous and gaseous becoming of these elemental and spiritual Territories which, in the hollow of extractive zones, harbor secrets and opacities. We are in the northern hemisphere, in a country called Canada, where more household and municipal waste is piled up, leaking, flowing and mutating, in unequalled proportion, than anywhere else[1]. These molecules, shattered, then recomposed, and so soon forgotten, lead liminal existences, in the heart of and beyond the ubiquity of the devices of canalization and control of matter. Unknown and unpredictable, they escape towards parallel and porous universes.  Surverse proposes to follow in their footsteps.</p>The 170 overflow structures that dot Montreal's water system are an example of a control device specific to municipal infrastructures. These underground chambers are intended to voluntarily redirect wastewater to the River and the River that embrace the Island and are activated when the hydraulic volume exceeds the retention capacity of the system. This can be caused by excessive rainfall or snowfall, or when major maintenance and rehabilitation work requires flow relief in the aqueduct system and at the mouth of the city's only wastewater treatment plant. An overflow is successful when it prevents the failure of pressurized infrastructure.</p><p>The redirection of these waters caused by the activation of a control structure creates environmental consequences whose legality only falsely develops a sense of safety-predictability and inevitability that government pollution thresholds are quick to corroborate[2]. Masked behind the apparent control of water, which has made the majority of its courses disappear on the territory of the metropolis, these overflows serve as silent outlets for the pressure and failure caused by the relentless attempts to contain a matter that cannot be fully contained. </p><p>Rather than criticizing the country's obvious mismanagement of waste, or proposing ever more advanced technological solutions for the healthy management of our sated desires, Surverse proposes to reconsider the various forms of relationship we have with these elements with their mysterious path and inhuman temporality. Beyond the excessive production and uneven distribution of contaminants in the environment, forms of existence are constantly erased, ignored and forgotten, under the aegis of scientific epistemologies and systems that normalize pollution. Surverse wants to jump into these universes where residues, leachates and microplastics swirl, and to overflow ourselves into moving places that do not know the narrowness and rigidity of measuring instruments and universal principles. We will let ourselves be guided by the magic of this opaque matter and by the dizzying play of scales that will soon decenter our human, all too human perspectives.</p><p>Surverse weighs its words, at once so volatile and so heavy, shards of political violence from which we inherit the privilegesof being here. If we have access to this Boreal, if we tread on this Shield whenever we move, the privileges that allow us to write and practice are imbued with the desire to reconfigure the relationships we have with this place that welcomes us. We have grown up and learned within an episteme that, from biology to geology, has quietly and rationally separated the sensible to the point of completely splitting the domains of life, death, and the non-living. In contrast, we wish to find our way back, among the intimate meanderings of a matter made of molecules, forces, and affects, to honor and call them by their ancient names.</p><br>[1] Hird, Myra J., 2013, 'Waste, Landfills, and an Environmental Ethic of Vulnerability,' in Ethics and the Environment, Bloomington: Indiana University Press, vol. 18(1), p. 105.<br>[2] Liboiron, Max, 2021, Pollution is Colonialism, Durham: Duke University Press.</p>";
+                }
+            }
+        </script>
+
+        <div id="background">
+            <p>
+                <div class="title">
+                        <a href="index.html" class="title">surverse</a> 
+                    </div>
+                </div>
+            </p>
+            <div id="lang">
+                <span onclick="toggleLanguage('EN')">EN</span>
+                <span onclick="toggleLanguage('FR')">FR</span>
+            </div>
+            <div id="surverse">
+                <p>
+                    Surverse plonge dans le devenir minéral, végétal, aqueux et gazeux de ces Territoires élémentaires et spirituels qui, dans le creux de zones extractives, recèlent de secrets et d’opacités. Nous sommes de l’hémisphère Nord, dans un pays appelé Canada, où s’entassent, fuient, s’écoulent et mutent, en proportion inégalée, plus de déchets ménagers et municipaux que partout ailleurs[1]. Ces molécules éclatées, puis recomposées, et si tôt oubliées, mènent des existences liminales, au cœur et par-delà l’ubiquité des dispositifs de canalisation et de contrôle de la matière. Inconnues et imprévisibles, elles s’échappent vers des univers parallèles et poreux.  Surverse propose d’en suivre les traces.
+                </p>    
+                    Les 170 ouvrages de surverse qui parsèment le réseau d’aqueduc de Montréal sont un exemple de dispositif de contrôle propre aux infrastructures municipales. Ces chambres souterraines ont pour objectif de rediriger volontairement les eaux usées vers le Fleuve et la Rivière qui embrassent l’Île et sont activées lorsque le volume hydraulique dépasse la capacité de rétention du système. Ceci peut être causé par de trop fortes précipitations de pluie ou de neige, ou encore lorsque des travaux majeurs d’entretien et de réfection requièrent l’allègement du débit dans le système d’aqueduc ainsi qu’à l’embouchure de la seule station d’épuration des eaux usées de la métropole. Une surverse est réussie lorsqu’elle prévient la défaillance d’une infrastructure sous pression.
+                </p>
+                <p>
+                    La réorientation de ces eaux causée par l’activation d’un ouvrage de régulation engendre des conséquences environnementales dont la légalité ne fait que développer, à tort, un sentiment de sécuritéprévisibilité et d’inévitabilité que les seuils de pollution gouvernementaux s’empressent de corroborer[2]. Masquées derrière l’apparent contrôle de l’eau, qui a fait disparaître la majorité de ses cours sur le territoire de la métropole, ces surverses servent d’exutoires silencieux à la pression et l’échec que provoque les tentatives acharnées d’endiguement d’une matière qui ne peut être totalement contenue.
+                </p>
+                <p>
+                    Plutôt que de critiquer la mauvaise gestion évidente des déchets au pays, ou encore de proposer des solutions technologiques toujours plus pointues pour la saine gestion de nos désirs assouvis, Surverse propose de reconsidérer les diverses formes de relations que nous entretenons avec ces éléments au parcours mystérieux et à la temporalité inhumaine. Par-delà la production excessive et la distribution inégale des contaminants dans l’environnement, des formes d’existences sont sans cesse effacées, ignorées et oubliées, sous l’égide des épistémologies scientifiques et des systèmes qui normalisent la pollution. Surverse veut d’abord faire le saut dans ces univers où tourbillonnent résidus, lixiviats et microplastiques, nous-même déborder en des lieux mouvants qui ne connaissent l’étroitesse et la rigidité des instruments de mesure et des principes universels. Nous nous laisserons guider par la magie de cette matière opaque et par l’étourdissement du jeu d’échelles qui auront tôt fait de décentrer nos perspectives humaines, trop humaines.
+                </p>   
+                <p>
+                    Surverse soupèse ses mots, à la fois si volatiles et si lourds, éclats de violences politiques dont nous héritons des privilègesdu privilège d’être ici. Si nous avons accès à cette Boréale, si nous foulons ce Bouclier dès lors que nous nous déplaçons, les privilèges qui nous permettent d’écrire et de pratiquer sont empreints du désir de reconfigurer les relations que nous avons avec ce lieu qui nous accueille. Nous avons grandi et appris au sein d’une épistémè qui, de la biologie à la géologie, a tranquillement et rationnellement départagé le sensible jusqu’à scinder tout à fait les domaines de la vie, de la mort, et du non-vivant. Par contraste, nous désirons retrouver notre chemin, parmi les méandres intimes d’une matière fait de molécules, de forces et d’affects, afin de les honorer et les appeler par leurs noms anciens.
+                </p>
+                <br>
+                    [1] Hird, Myra J., 2013, “Waste, Landfills, and an Environmental Ethic of Vulnerability”, in Ethics and the Environment, Bloomington: Indiana University Press, vol. 18(1), p. 105.
+                <br>   
+                    [2] Liboiron, Max, 2021, Pollution is Colonialism, Durham: Duke University Press.
+                </p>
+            </div>
+        </div>
+    </body>
+</html>
