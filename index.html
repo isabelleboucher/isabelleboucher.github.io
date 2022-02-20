@@ -34,7 +34,7 @@
 
             function preload () {
                 font = loadFont('assets/Inconsolata/static/Inconsolata/Inconsolata-Medium.ttf');
-                let rand = Math.floor(Math.random() * 2) + 1;
+                let rand = Math.floor(Math.random() * 3) + 1;
                 bg = loadImage(`images/main/main${rand}.jpg`);
                 //mapM = loadImage('images/carte1.png');
 
@@ -120,8 +120,8 @@
                 tint(255, 3);
                 image(bg, 0, offset);
                 bg.resize(width, height);
-                image(mapM, 0, 0);
-                mapM.resize(width, height);
+                //image(mapM, 0, 0);
+                //mapM.resize(width, height);
             }
 
         </script>
